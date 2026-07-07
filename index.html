@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Massimo Zucco - Profilo Professionale</title>
+    <style>
+        :root {
+            --primary-color: #2c3e50;
+            --secondary-color: #3498db;
+            --text-color: #333;
+            --bg-color: #f8f9fa;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: var(--bg-color);
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width: 900px;
+            margin: 40px auto;
+            background: #fff;
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        header {
+            text-align: center;
+            border-bottom: 2px solid var(--bg-color);
+            padding-bottom: 20px;
+            margin-bottom: 30px;
+        }
+        h1 {
+            color: var(--primary-color);
+            margin: 0 0 10px 0;
+            font-size: 2.5em;
+        }
+        h2 {
+            color: var(--secondary-color);
+            border-bottom: 2px solid var(--bg-color);
+            padding-bottom: 5px;
+            margin-top: 30px;
+        }
+        .subtitle {
+            font-size: 1.2em;
+            color: #666;
+            margin-bottom: 5px;
+        }
+        .location {
+            color: #888;
+            font-size: 0.9em;
+        }
+        .section-content {
+            margin-bottom: 20px;
+        }
+        .job-title {
+            font-weight: bold;
+            color: var(--primary-color);
+        }
+        .date {
+            font-style: italic;
+            color: #666;
+            font-size: 0.9em;
+        }
+        ul {
+            padding-left: 20px;
+        }
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+        }
+        .skill-item {
+            background: var(--bg-color);
+            padding: 10px;
+            border-radius: 4px;
+            text-align: center;
+            font-weight: 500;
+        }
+        @media (max-width: 600px) {
+            .container {
+                margin: 10px;
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Massimo Zucco</h1>
+            <div class="subtitle">Imprenditore e Professionista | Elementi</div>
+            <div class="location">Cuneo e provincia, Italia</div>
+        </header>
+
+        <section>
+            <h2>Profilo</h2>
+            <div class="section-content">
+                <p>Professionista poliedrico con esperienza consolidata dal 1996. Specializzato nella gestione di progetti complessi che uniscono il settore degli impianti elettrici e fotovoltaici con le moderne tecnologie di comunicazione digitale e web development.</p>
+            </div>
+        </section>
+
+        <section>
+            <h2>Esperienza Professionale</h2>
+            
+            <div class="section-content">
+                <div class="job-title">Fondatore</div>
+                <div class="date">Elementi | 1996 - Presente</div>
+                <ul>
+                    <li>Gestione e coordinamento di collaboratori esperti specializzati in impianti civili, industriali e fotovoltaici.</li>
+                    <li>Sviluppo di strategie di comunicazione digitale e presenza online aziendale.</li>
+                </ul>
+            </div>
+
+            <div class="section-content">
+                <div class="job-title">Digital Project & Web Developer</div>
+                <div class="date">Progetti Vari | Presente</div>
+                <ul>
+                    <li>Sviluppo di piattaforme web e siti vetrina utilizzando WordPress, Elementor e temi avanzati (es. The7).</li>
+                    <li>Creazione di contenuti digitali, format video (Web ON Air) e ottimizzazione metadati per piattaforme social (YouTube).</li>
+                    <li>Integrazione e analisi dati tramite Google Analytics (GA4).</li>
+                </ul>
+            </div>
+        </section>
+
+        <section>
+            <h2>Competenze Tecniche</h2>
+            <div class="skills-grid">
+                <div class="skill-item">Impianti Elettrici & Fotovoltaico</div>
+                <div class="skill-item">WordPress & Elementor</div>
+                <div class="skill-item">Video Editing (DaVinci, CapCut)</div>
+                <div class="skill-item">Gestione Server (Plesk)</div>
+                <div class="skill-item">Google Analytics (GA4)</div>
+                <div class="skill-item">Comunicazione Digitale</div>
+            </div>
+        </section>
+    </div>
+</body>
+</html>

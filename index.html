@@ -3,140 +3,524 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Massimo Zucco - Profilo Professionale</title>
+    <title>Pietro Giordano — Portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
     <style>
         :root {
-            --primary-color: #2c3e50;
-            --secondary-color: #3498db;
-            --text-color: #333;
-            --bg-color: #f8f9fa;
+            --bg-cream: #fbf9f6;
+            --bg-beige: #f1eae0;
+            --bg-beige-dark: #e5d9c8;
+            --brown-dark: #2a1b14;
+            --brown-medium: #4a3525;
+            --accent-terracotta: #a67c52;
+            --text-dark: #1c120c;
+            --text-light: #fbf9f6;
+            --transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
         }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            line-height: 1.6;
-            color: var(--text-color);
-            background-color: var(--bg-color);
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: var(--bg-cream);
+            color: var(--text-dark);
             margin: 0;
             padding: 0;
+            overflow-x: hidden;
         }
-        .container {
-            max-width: 900px;
-            margin: 40px auto;
-            background: #fff;
-            padding: 40px;
-            border-radius: 8px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+
+        /* Barra di navigazione dinamica */
+        nav {
+            position: fixed;
+            top: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 90%;
+            max-width: 800px;
+            background: rgba(241, 234, 224, 0.75);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.4);
+            padding: 15px 30px;
+            border-radius: 100px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 1000;
+            box-shadow: 0 10px 30px rgba(42, 27, 20, 0.05);
         }
-        header {
-            text-align: center;
-            border-bottom: 2px solid var(--bg-color);
-            padding-bottom: 20px;
-            margin-bottom: 30px;
-        }
-        h1 {
-            color: var(--primary-color);
-            margin: 0 0 10px 0;
-            font-size: 2.5em;
-        }
-        h2 {
-            color: var(--secondary-color);
-            border-bottom: 2px solid var(--bg-color);
-            padding-bottom: 5px;
-            margin-top: 30px;
-        }
-        .subtitle {
+
+        nav .logo {
+            font-family: 'Playfair Display', serif;
+            font-weight: 700;
             font-size: 1.2em;
-            color: #666;
-            margin-bottom: 5px;
+            letter-spacing: -0.5px;
         }
-        .location {
-            color: #888;
+
+        nav .nav-links {
+            display: flex;
+            gap: 20px;
+        }
+
+        nav a {
+            color: var(--text-dark);
+            text-decoration: none;
             font-size: 0.9em;
+            font-weight: 500;
+            transition: var(--transition);
         }
-        .section-content {
+
+        nav a:hover {
+            color: var(--accent-terracotta);
+        }
+
+        /* Sezioni Full-Page */
+        section {
+            min-height: 100vh;
+            padding: 120px 20px 60px 20px;
+            box-sizing: border-box;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            width: 100%;
+        }
+
+        /* --- HERO SECTION --- */
+        #hero {
+            background-color: var(--brown-dark);
+            color: var(--text-light);
+            padding-top: 60px;
+            position: relative;
+        }
+
+        #hero .container {
+            display: grid;
+            grid-template-columns: 1.2fr 0.8fr;
+            align-items: center;
+            gap: 60px;
+        }
+
+        .hero-text h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 4em;
+            line-height: 1.1;
+            margin: 0 0 20px 0;
+            animation: fadeInUp 1s var(--transition);
+        }
+
+        .hero-text h1 span {
+            font-style: italic;
+            color: var(--bg-beige);
+            font-weight: 400;
+        }
+
+        .hero-text p {
+            font-size: 1.15em;
+            font-weight: 300;
+            line-height: 1.7;
+            color: var(--bg-beige-dark);
+            margin-bottom: 40px;
+            max-width: 600px;
+            animation: fadeInUp 1.2s var(--transition);
+        }
+
+        .hero-cta {
+            display: flex;
+            gap: 20px;
+            align-items: center;
+            animation: fadeInUp 1.4s var(--transition);
+        }
+
+        .btn {
+            background-color: var(--bg-beige);
+            color: var(--brown-dark);
+            padding: 15px 35px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: var(--transition);
+            border: 1px solid transparent;
+        }
+
+        .btn:hover {
+            background-color: transparent;
+            color: var(--text-light);
+            border-color: var(--text-light);
+            transform: translateY(-3px);
+        }
+
+        .social-links a {
+            color: var(--text-light);
+            margin-right: 15px;
+            font-weight: 500;
+            transition: var(--transition);
+        }
+
+        .social-links a:hover {
+            color: var(--accent-terracotta);
+        }
+
+        /* Contenitore Foto Profilo */
+        .hero-image-wrapper {
+            display: flex;
+            justify-content: center;
+            animation: fadeIn 1.5s var(--transition);
+        }
+
+        .profile-frame {
+            width: 340px;
+            height: 440px;
+            background-color: var(--brown-medium);
+            border-radius: 24px;
+            position: relative;
+            overflow: hidden;
+            border: 1px solid rgba(255,255,255,0.1);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+            transition: var(--transition);
+        }
+
+        .profile-frame:hover {
+            transform: scale(1.02) rotate(1deg);
+        }
+
+        .profile-frame img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .profile-placeholder {
+            position: absolute;
+            inset: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--bg-beige-dark);
+            font-size: 0.9em;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            text-align: center;
+            padding: 20px;
+        }
+
+        /* --- SEZIONE ESPERIENZE --- */
+        #esperienze {
+            background-color: var(--bg-cream);
+        }
+
+        .section-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.8em;
+            margin-bottom: 50px;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 3px;
+            background-color: var(--accent-terracotta);
+            margin-top: 15px;
+        }
+
+        .timeline {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+        }
+
+        .card {
+            background-color: var(--bg-beige);
+            padding: 40px;
+            border-radius: 20px;
+            transition: var(--transition);
+            border: 1px solid rgba(42, 27, 20, 0.05);
+            position: relative;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            background-color: var(--bg-beige-dark);
+            box-shadow: 0 15px 30px rgba(42, 27, 20, 0.05);
+        }
+
+        .card-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
             margin-bottom: 20px;
         }
-        .job-title {
-            font-weight: bold;
-            color: var(--primary-color);
+
+        .card-title h3 {
+            margin: 0;
+            font-size: 1.5em;
+            font-family: 'Playfair Display', serif;
         }
-        .date {
-            font-style: italic;
-            color: #666;
-            font-size: 0.9em;
+
+        .card-title p {
+            margin: 5px 0 0 0;
+            color: var(--accent-terracotta);
+            font-weight: 600;
+            font-size: 0.95em;
         }
-        ul {
+
+        .card-date {
+            background: rgba(255, 255, 255, 0.5);
+            padding: 6px 16px;
+            border-radius: 50px;
+            font-size: 0.85em;
+            font-weight: 600;
+        }
+
+        .card ul {
+            margin: 0;
             padding-left: 20px;
+            color: #33221a;
         }
-        .skills-grid {
+
+        .card li {
+            margin-bottom: 8px;
+        }
+
+        /* --- COMPETENZE & FORMAZIONE --- */
+        #competenze {
+            background-color: var(--bg-beige);
+        }
+
+        .grid-two-columns {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 15px;
+            grid-template-columns: 1.1fr 0.9fr;
+            gap: 60px;
         }
-        .skill-item {
-            background: var(--bg-color);
-            padding: 10px;
-            border-radius: 4px;
-            text-align: center;
+
+        .skills-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+
+        .skill-tag {
+            background-color: var(--bg-cream);
+            padding: 14px 24px;
+            border-radius: 100px;
+            font-weight: 500;
+            font-size: 0.95em;
+            transition: var(--transition);
+            border: 1px solid rgba(42, 27, 20, 0.03);
+            cursor: default;
+        }
+
+        .skill-tag:hover {
+            background-color: var(--brown-dark);
+            color: var(--text-light);
+            transform: scale(1.05);
+        }
+
+        .education-block h4 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.4em;
+            margin: 0 0 10px 0;
+        }
+
+        .education-meta {
+            font-style: italic;
+            color: var(--accent-terracotta);
+            margin-bottom: 15px;
             font-weight: 500;
         }
-        @media (max-width: 600px) {
-            .container {
-                margin: 10px;
-                padding: 20px;
-            }
+
+        /* --- FOOTER --- */
+        footer {
+            background-color: var(--brown-dark);
+            color: var(--text-light);
+            padding: 60px 20px;
+            text-align: center;
+        }
+
+        footer p {
+            margin: 5px 0;
+            font-weight: 300;
+        }
+
+        .footer-info {
+            margin-top: 20px;
+            font-size: 0.9em;
+            color: var(--bg-beige-dark);
+        }
+
+        /* Animazioni Keyframes */
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        /* Responsiveness */
+        @media (max-width: 768px) {
+            nav { width: 95%; padding: 12px 20px; }
+            nav .nav-links { display: none; } /* Semplificato per mobile */
+            section { min-height: auto; padding: 100px 20px 40px 20px; }
+            #hero .container, .grid-two-columns { grid-template-columns: 1fr; gap: 40px; }
+            .hero-text h1 { font-size: 2.8em; }
+            .profile-frame { width: 280px; height: 360px; }
+            .card-header { flex-direction: column; gap: 10px; }
+            .card-date { align-self: flex-start; }
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <header>
-            <h1>Massimo Zucco</h1>
-            <div class="subtitle">Imprenditore e Professionista | Elementi</div>
-            <div class="location">Cuneo e provincia, Italia</div>
-        </header>
 
-        <section>
-            <h2>Profilo</h2>
-            <div class="section-content">
-                <p>Professionista poliedrico con esperienza consolidata dal 1996. Specializzato nella gestione di progetti complessi che uniscono il settore degli impianti elettrici e fotovoltaici con le moderne tecnologie di comunicazione digitale e web development.</p>
+    <nav>
+        <div class="logo">PG</div>
+        <div class="nav-links">
+            <a href="#hero">Profilo</a>
+            <a href="#esperienze">Esperienze</a>
+            <a href="#competenze">Competenze & Formazione</a>
+        </div>
+    </nav>
+
+    <section id="hero">
+        <div class="container">
+            <div class="hero-text">
+                <h1>Sono Pietro Giordano,<br><span>Web Designer & Tech</span></h1>
+                <p>Sviluppo interfacce web efficaci unendo competenze tecniche informatiche a soluzioni creative di editing video e graphic design. Strutturo codice solido, gestisco architetture CMS con WordPress ed Elementor e ottimizzo flussi multimediali, mantenendo un approccio flessibile e focalizzato sulla risoluzione dei problemi all'interno dei team operativi.</p>
+                <div class="hero-cta">
+                    <a href="mailto:pie.dlamura@gmail.com" class="btn">Contattami</a>
+                    <div class="social-links">
+                        <a href="https://www.linkedin.com/in/pietro-giordano-276319356" target="_blank">LinkedIn</a>
+                        <a href="#" target="_blank">GitHub</a> </div>
+                </div>
             </div>
-        </section>
+            <div class="hero-image-wrapper">
+                <div class="profile-frame">
+                    <img src="" alt="">
+                    <div class="profile-placeholder">Spazio Foto Profilo</div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-        <section>
-            <h2>Esperienza Professionale</h2>
+    <section id="esperienze">
+        <div class="container">
+            <h2 class="section-title">Esperienze Professionali</h2>
             
-            <div class="section-content">
-                <div class="job-title">Fondatore</div>
-                <div class="date">Elementi | 1996 - Presente</div>
-                <ul>
-                    <li>Gestione e coordinamento di collaboratori esperti specializzati in impianti civili, industriali e fotovoltaici.</li>
-                    <li>Sviluppo di strategie di comunicazione digitale e presenza online aziendale.</li>
-                </ul>
-            </div>
+            <div class="timeline">
+                <div class="card">
+                    <div class="card-header">
+                        <div class="card-title">
+                            <h3>Tirocinante Web Designer</h3>
+                            <p>Gem Communication</p>
+                        </div>
+                        <span class="card-date">In corso</span>
+                    </div>
+                    <ul>
+                        <li>Sviluppo, gestione e manutenzione di piattaforme web e landing page tramite WordPress ed Elementor.</li>
+                        <li>Creazione, montaggio e post-produzione di contenuti video dinamici utilizzando CapCut.</li>
+                        <li>Progettazione grafica di layout editoriali, libri e materiale promozionale cartaceo (volantini) con Canva.</li>
+                        <li>Fornitura di assistenza tecnica diretta per il corretto funzionamento di siti internet e la gestione dei servizi e-mail.</li>
+                        <li>Supporto operativo versatile e attività logistiche di magazzino per un'azienda associata.</li>
+                    </ul>
+                </div>
 
-            <div class="section-content">
-                <div class="job-title">Digital Project & Web Developer</div>
-                <div class="date">Progetti Vari | Presente</div>
-                <ul>
-                    <li>Sviluppo di piattaforme web e siti vetrina utilizzando WordPress, Elementor e temi avanzati (es. The7).</li>
-                    <li>Creazione di contenuti digitali, format video (Web ON Air) e ottimizzazione metadati per piattaforme social (YouTube).</li>
-                    <li>Integrazione e analisi dati tramite Google Analytics (GA4).</li>
-                </ul>
-            </div>
-        </section>
+                <div class="card">
+                    <div class="card-header">
+                        <div class="card-title">
+                            <h3>Assistente a Persona Disabile</h3>
+                            <p>Assistenza Familiare Privata — Morra del Villar (CN)</p>
+                        </div>
+                        <span class="card-date">06/2025 — 09/2025</span>
+                    </div>
+                    <ul>
+                        <li>Gestione quotidiana dei fabbisogni della persona, somministrazione pianificata dei farmaci e documentazione clinica di base.</li>
+                        <li>Pianificazione di esercizi fisici riabilitativi volti al mantenimento della mobilità e assistenza attiva nelle uscite all'aperto.</li>
+                    </ul>
+                </div>
 
-        <section>
-            <h2>Competenze Tecniche</h2>
-            <div class="skills-grid">
-                <div class="skill-item">Impianti Elettrici & Fotovoltaico</div>
-                <div class="skill-item">WordPress & Elementor</div>
-                <div class="skill-item">Video Editing (DaVinci, CapCut)</div>
-                <div class="skill-item">Gestione Server (Plesk)</div>
-                <div class="skill-item">Google Analytics (GA4)</div>
-                <div class="skill-item">Comunicazione Digitale</div>
+                <div class="card">
+                    <div class="card-header">
+                        <div class="card-title">
+                            <h3>Operaio Agricolo Stagionale</h3>
+                            <p>Compagnie Agricole Locali — Provincia di Cuneo</p>
+                        </div>
+                        <span class="card-date">Stagioni 2022 — 2024</span>
+                    </div>
+                    <ul>
+                        <li>Svolgimento di mansioni manuali cicliche in diverse realtà del territorio (Roccabruna, Monastero, Pratavecchia).</li>
+                        <li>Operazioni di potatura specializzata di alberi e viti, raccolta e movimentazione merci (frutta e uova).</li>
+                        <li>Gestione organizzativa dei capannoni produttivi, cura del benessere animale e rigoroso rispetto delle normative igienico-sanitarie.</li>
+                    </ul>
+                </div>
             </div>
-        </section>
-    </div>
+        </div>
+    </section>
+
+    <section id="competenze">
+        <div class="container">
+            <div class="grid-two-columns">
+                
+                <div>
+                    <h2 class="section-title">Competenze Tecniche</h2>
+                    <div class="skills-container">
+                        <div class="skill-tag">WordPress & Elementor</div>
+                        <div class="skill-tag">Video Editing (CapCut)</div>
+                        <div class="skill-tag">Graphic Design (Canva)</div>
+                        <div class="skill-tag">C / C++ / Python / Java</div>
+                        <div class="skill-tag">Database (SQL)</div>
+                        <div class="skill-tag">Sistemi di Rete & Hardware</div>
+                        <div class="skill-tag">Automazione & Robotica</div>
+                        <div class="skill-tag">Problem Solving</div>
+                    </div>
+                    
+                    <h2 class="section-title" style="margin-top: 40px;">Lingue e Informazioni</h2>
+                    <p style="font-size: 1.05em; line-height: 1.8; margin: 0;">
+                        <strong>Lingue:</strong> Italiano (Madrelingua) · Inglese (B2 - Intermedio Avanzato) · Francese (A2 - Base) · Spagnolo (A2 - Base)<br>
+                        <strong>Patenti:</strong> A1 e B (Automunito con mezzo proprio)
+                    </p>
+                </div>
+
+                <div>
+                    <h2 class="section-title">Formazione</h2>
+                    <div class="education-block" style="margin-bottom: 35px;">
+                        <h4>Diploma Tecnico Superiore: Informatica</h4>
+                        <p class="education-meta">ITIS Mario Del Pozzo, Cuneo | Conseguito: 07/2025 (QF level 4)</p>
+                        <p style="margin: 0; font-size: 0.95em; color: var(--brown-medium);">Specializzazione focalizzata sulla <strong>Robotica Smart</strong>. Studio approfondito di sistemi embedded, programmazione a oggetti, architetture di rete e sistemi intelligenti integrati.</p>
+                    </div>
+                    <div class="education-block">
+                        <h4>Progetti ed Esperienze Formative (PCTO)</h4>
+                        <p style="margin: 5px 0; font-size: 0.95em;">· <strong>Delibread 2025:</strong> Sviluppo in team di una piattaforma web per la gestione e digitalizzazione di negozi al dettaglio.</p>
+                        <p style="margin: 5px 0; font-size: 0.95em;">· <strong>GameAbility 2025:</strong> Progetto di ricerca hardware/software basato su segnali cerebrali per il controllo di droni sanitari.</p>
+                        <p style="margin: 5px 0; font-size: 0.95em;">· <strong>NAOChallenge (2023-2024):</strong> Ingegnerizzazione logica del robot umanoide NAO applicata all'assistenza clienti e automotive.</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p style="font-family: 'Playfair Display', serif; font-size: 1.6em; font-weight: 600; margin-bottom: 15px;">Pietro Giordano</p>
+            <p>Via Basse Macra 15/a, 12020, Villar San Costanzo, CN</p>
+            <p>Tel: +39 3311802633 | Email: pie.dlamura@gmail.com</p>
+            <div class="footer-info">
+                <p>© 2026 Pietro Giordano. Autorizzo il trattamento dei dati personali (D.Lgs. 196/2003 e Reg. UE 2016/679).</p>
+            </div>
+        </div>
+    </footer>
+
 </body>
 </html>

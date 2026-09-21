@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>Pietro Giordano — Portfolio Game</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <div id="game-wrap">
+    <canvas id="game-canvas"></canvas>
+
+    <!-- Indicatore "!" quando ci si avvicina a un oggetto interagibile -->
+    <div id="interact-hint" class="hidden">!</div>
+
+    <!-- Casella di dialogo -->
+    <div id="dialogue-box" class="hidden">
+      <div id="dialogue-name"></div>
+      <div id="dialogue-text"></div>
+      <div id="dialogue-hint"></div>
+    </div>
+
+    <!-- Bottone per la versione testuale del CV -->
+    <button id="cv-toggle" title="Versione testuale del CV">📄 CV testuale</button>
+    <button id="mute-toggle" title="Audio on/off">🔊</button>
+
+    <!-- Pannello CV testuale (nascosto finché non richiesto) -->
+    <div id="cv-panel" class="hidden">
+      <div id="cv-panel-inner">
+        <button id="cv-close">✕</button>
+        <h1>Pietro Giordano</h1>
+        <p class="cv-tagline">Web Designer — Diploma Tecnico Superiore in Informatica, specializzazione Robotica Smart</p>
+
+        <div class="cv-section">
+          <h2>Contatti</h2>
+          <ul class="cv-list">
+            <li>📧 <a href="mailto:pie.dlamura@gmail.com">pie.dlamura@gmail.com</a></li>
+            <li>📱 +39 3311802633</li>
+            <li>📍 Villar San Costanzo (CN)</li>
+            <li>💼 <a href="https://www.linkedin.com/in/pietro-giordano-276319356" target="_blank" rel="noopener">LinkedIn</a></li>
+            <li>💻 <a href="https://github.com/pietrogiordano-git" target="_blank" rel="noopener">GitHub</a></li>
+          </ul>
+        </div>
+
+        <div class="cv-section">
+          <h2>Esperienze</h2>
+          <ul class="cv-list">
+            <li>Tirocinante Web Designer — Gem Communication (in corso)</li>
+            <li>Assistente a persona disabile — Morra del Villar, CN (06/2025–09/2025)</li>
+            <li>Operaio agricolo stagionale — Cuneo, varie stagioni (2022–2024)</li>
+          </ul>
+        </div>
+
+        <div class="cv-section">
+          <h2>Formazione</h2>
+          <ul class="cv-list">
+            <li>Diploma Tecnico Superiore: Informatica, specializzazione Robotica Smart — ITIS Mario Del Pozzo, Cuneo (07/2025)</li>
+          </ul>
+        </div>
+
+        <a class="cv-download" href="assets/Pietro_Giordano_Curriculum_IT.pdf" target="_blank" rel="noopener">⬇ Scarica il CV completo in PDF</a>
+      </div>
+    </div>
+
+    <!-- Controlli touch (mobile/tablet) -->
+    <div id="touch-controls">
+      <div id="touch-dpad">
+        <button data-dir="up">▲</button>
+        <button data-dir="left">◀</button>
+        <button data-dir="right">▶</button>
+        <button data-dir="down">▼</button>
+      </div>
+      <button id="touch-interact">E</button>
+    </div>
+
+    <div id="loading-hint">Frecce / WASD per muoverti — E o Invio per interagire</div>
+  </div>
+
+  <script src="js/pixelart.js"></script>
+  <script src="js/audio.js"></script>
+  <script src="js/dialogue.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
